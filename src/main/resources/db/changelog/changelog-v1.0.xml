@@ -5,17 +5,17 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                     http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
 
-    <changeSet id="1" author="jason">
-        <addColumn
-                schemaName="liquibase"
-                tableName="persons">
-            <column name="address" type="varchar(255)"></column>
-        </addColumn>
-    </changeSet>
+<!--    <changeSet id="1" author="jason">-->
+<!--        <addColumn-->
+<!--                schemaName="liquibase"-->
+<!--                tableName="persons">-->
+<!--            <column name="address" type="varchar(255)"></column>-->
+<!--        </addColumn>-->
+<!--    </changeSet>-->
 
-    <changeSet id="2" author="jason">
-        <delete schemaName="liquibase" tableName="persons">
-            <where>name = 'Jason'</where>
-        </delete>
-    </changeSet>
+<!--    <changeSet id="2" author="jason">-->
+<!--        <delete schemaName="liquibase" tableName="persons">-->
+<!--            <where>name = 'Jason'</where>-->
+<!--        </delete>-->
+<!--    </changeSet>-->
 </databaseChangeLog>

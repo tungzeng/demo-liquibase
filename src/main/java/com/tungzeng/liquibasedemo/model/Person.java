@@ -1,4 +1,4 @@
-package com.tungzeng.liquibasedemo;
+package com.tungzeng.liquibasedemo.model;
 
 import javax.persistence.*;
 
