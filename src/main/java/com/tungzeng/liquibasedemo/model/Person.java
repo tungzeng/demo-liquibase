@@ -23,9 +23,25 @@ public class Person {
     public Person() {
     }
 
-    public Person(String name, String height) {
+    public Person(int id, String name, String height, String address) {
+        this.id = id;
         this.name = name;
         this.height = height;
+        this.address = address;
+    }
+
+    public Person(String name, String height, String address) {
+        this.name = name;
+        this.height = height;
+        this.address = address;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {

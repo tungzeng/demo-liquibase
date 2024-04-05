@@ -8,12 +8,10 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 @Repository
 public interface PersonRepository extends CrudRepository<Person, Integer> {
-
-    @Query("SELECT p.name FROM Person p WHERE p.name LIKE %:personName%")
-    String findByName(String personName);
 
     @Modifying
     @Transactional
