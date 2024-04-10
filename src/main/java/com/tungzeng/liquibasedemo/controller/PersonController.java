@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -13,11 +14,12 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("person")
-public class Controller {
+public class PersonController {
 
     @Autowired
     private PersonRepository personRepository;
 
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("add")
     public ResponseEntity<?> createPerson(@RequestBody Person person) {
 
@@ -50,13 +52,14 @@ public class Controller {
 
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("delete/{id}")
     public ResponseEntity<?> deleteById(@PathVariable("id") int id) {
         try{
             personRepository.deleteById(id);
             return new ResponseEntity<>("Deleted successfully", HttpStatus.OK);
         } catch (EmptyResultDataAccessException e) {
-            return new ResponseEntity<>("user not found", HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>("User not found", HttpStatus.NOT_FOUND);
         }
 
     }

@@ -1,7 +1,7 @@
 package com.tungzeng.liquibasedemo;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.tungzeng.liquibasedemo.controller.Controller;
+import com.tungzeng.liquibasedemo.controller.PersonController;
 import com.tungzeng.liquibasedemo.model.Person;
 import com.tungzeng.liquibasedemo.repository.PersonRepository;
 import org.junit.jupiter.api.Test;
@@ -18,7 +18,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-@WebMvcTest(Controller.class)
+@WebMvcTest(PersonController.class)
 public class PersonApiControllerTests {
 
     private static final String END_POINT_PATH = "/person";
